@@ -86,6 +86,11 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	/// @description	Add a new entry to the highscore table.
 	///					The added entry is returned or undefined, if the 
 	///					score or time was not good enough for the table.
+	/// @param {string} _name	The name of the player
+	/// @param {int} _score	The points reached.
+	/// @param {int} _time	The running time of the game. Expected to be in milliseconds.
+	/// @param {any} _id	Optional value if you have some unique player ids in your game.
+	/// @returns {HighScoreEntry} The entry generated or undefined, if this was not a highscore.
 	static register_highscore = function(_name, _score, _time, _id = undefined) {
 		var val;
 		switch (criteria) {
