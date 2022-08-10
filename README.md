@@ -21,6 +21,7 @@ No problem, just head over to the [Releases]() and get the `.yymps` local packag
 This library is also packaged into my [gml-raptor](https://github.com/Grisgram/gml-raptor) platform, where it is super-easy to save and restore your highscore lists by simply adding them to raptor's `GLOBALDATA` struct or attaching it to the `data` member of your _MainRoomController_, whatever you prefer.
 
 ### Personal note
+You may use this library for your own projects, even commercial. Crediting me makes me happy!<br/>
 As always, if you like what you see, please ✨ the repository and consider following me. The more reach these libraries get, the better they can evolve!
 
 If you have an idea, how to improve this library, just open a pull request! I will gladly accept contributions as long as they fit the spirit of the library.
