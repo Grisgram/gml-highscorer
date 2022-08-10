@@ -18,6 +18,8 @@ The renderers are highly configurable through their extensive _Variable Definiti
 No problem, just head over to the [Releases]() and get the `.yymps` local package for easy import.
 
 ## Part of gml-raptor
+![image](https://user-images.githubusercontent.com/19487451/183870821-b88872c6-1fe2-4c9e-a862-ff780049b20a.png)
+
 This library is also packaged into my [gml-raptor](https://github.com/Grisgram/gml-raptor) platform, where it is super-easy to save and restore your highscore lists by simply adding them to raptor's `GLOBALDATA` struct or attaching it to the `data` member of your _MainRoomController_, whatever you prefer.
 
 ### Personal note
