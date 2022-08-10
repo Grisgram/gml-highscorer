@@ -14,6 +14,10 @@ Just open the project in GameMaker Studio and hit F5, so you can play around wit
 
 The renderers are highly configurable through their extensive _Variable Definitions_. Take a look at the wiki for details on how to use it.
 
+This graphic shows some information, what you can customize
+![image](https://user-images.githubusercontent.com/19487451/183873395-84992003-34bd-4d20-af1f-08d7dc75ccdd.png)
+
+
 ### Don't want to clone and play with the source code?
 No problem, just head over to the [Releases]() and get the `.yymps` local package for easy import.
 
