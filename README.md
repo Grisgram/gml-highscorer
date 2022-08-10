@@ -27,5 +27,6 @@ As always, if you like what you see, please ✨ the repository and consider foll
 If you have an idea, how to improve this library, just open a pull request! I will gladly accept contributions as long as they fit the spirit of the library.
 
 Have fun with the highscorer!
-Yours,
+
+Yours,<br/>
 Gris
