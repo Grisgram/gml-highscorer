@@ -11,6 +11,7 @@ All objects and classes are documented in the [wiki](https://github.com/Grisgram
 ## Here's what it can look like
 This screenshot is taken from the demo program contained in the repository. 
 Just open the project in GameMaker Studio and hit F5, so you can play around with the settings and take a closer look in the room, where variables are set for the renderers.
+**Date and Time format are localized based on the device settings!**
 
 ![screen_default_score](https://user-images.githubusercontent.com/19487451/183867594-7d515db0-d70c-4906-8967-321d7c1f54ac.png)
 
