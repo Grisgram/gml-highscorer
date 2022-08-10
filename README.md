@@ -1,7 +1,8 @@
-## Welcome to the `gml-highscorer` repository!<br/>
-_Highscores &amp; Trophies for your GameMaker Game_
+## Welcome to the gml-highscorer repository!<br/>
+<p align="center"><img src="https://user-images.githubusercontent.com/19487451/183900462-3a74cc62-d2da-4109-836e-963748fd4993.png" style="display:block; margin:auto; width:172px"><br/>
+  <i>Highscores &amp; Trophies for your GameMaker Game</i></p>
 
-This repository contains the full source code of my highscore-library, including a ready-to-use renderer for HighscoreTables in your game.
+This repository contains the full source code of my highscore-library, including two ready-to-use renderers for HighscoreTables in your game.
 You can render a normal looking highscore or even a more sophisticated _TrophyTable_.
 
 #### Rendering is very efficient, as the table is pre-rendered onto a surface and only the surface is drawn in the Draw (or DrawGUI) event.
