@@ -29,4 +29,4 @@ If you have an idea, how to improve this library, just open a pull request! I wi
 Have fun with the highscorer!
 
 Yours,<br/>
-Gris
+_Gris_
