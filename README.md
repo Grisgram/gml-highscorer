@@ -7,6 +7,9 @@ You can render a normal looking highscore or even a more sophisticated _TrophyTa
 Rendering is very efficient, as the table is pre-rendered onto a surface and only the surface is drawn in the Draw (or DrawGUI) event.
 
 ## Here's what it can look like
+This screenshot is taken from the demo program contained in the repository. 
+Just open the project in GameMaker Studio and hit F5, so you can play around with the settings and take a closer look in the room, where variables are set for the renderers.
+
 ![screen_default_score](https://user-images.githubusercontent.com/19487451/183867594-7d515db0-d70c-4906-8967-321d7c1f54ac.png)
 
 The renderers are highly configurable through their extensive _Variable Definitions_. Take a look at the wiki for details on how to use it.
