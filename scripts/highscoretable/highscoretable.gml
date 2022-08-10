@@ -24,44 +24,36 @@ enum scoring {
 }
 
 function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) constructor {
-
-	max_entries = _max_entries;
-	criteria = _criteria;
-	entries = array_create(_max_entries, undefined);
-
-	/// @function		get_table()
-	/// @description	Returns the internal array of entries of this HighScoreTable, 
-	///					so you can serialize it to a file, encrypt it, whatever you want. 
-	///					This is an array of length n (some may be undefined if the table is
-	///					not entirely filled with entries), where n is the _max_entries supplied
-	///					with the constructor.
-	static get_entries = function() {
-		return entries;
+	
+	data = {
+		max_entries : _max_entries,
+		criteria : _criteria,
+		entries : array_create(_max_entries, undefined),
 	}
-
+	
 	/// @function		reset()
 	/// @description	Remove all entries and start over with a new array
 	static reset = function() {
-		entries = array_create(max_entries, undefined);	
+		data.entries = array_create(data.max_entries, undefined);	
 	}
 
 	static __is_better_than = function(value, better_than_entry) {
-		switch (criteria) {
-			case scoring.score_high:	return value >= better_than_entry.Score;
-			case scoring.score_low:		return value <= better_than_entry.Score;
-			case scoring.time_high:		return value >= better_than_entry.Time;
-			case scoring.time_low:		return value <= better_than_entry.Time;
+		switch (data.criteria) {
+			case scoring.score_high:	return value >= better_than_entry.data.Score;
+			case scoring.score_low:		return value <= better_than_entry.data.Score;
+			case scoring.time_high:		return value >= better_than_entry.data.Time;
+			case scoring.time_low:		return value <= better_than_entry.data.Time;
 		}
 	}
 
 	/// @function		size()
 	/// @description	Gets the number of entries in the table (not the array size)
 	static size = function() {
-		for (var i = 0; i < array_length(entries); i++) {
-			if (entries[@ i] == undefined)
+		for (var i = 0; i < array_length(data.entries); i++) {
+			if (data.entries[@ i] == undefined)
 				return i;
 		}
-		return array_length(entries);
+		return array_length(data.entries);
 	}
 
 	/// @function		get_highscore_rank(_value)
@@ -73,8 +65,8 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	/// @param {real}	_value	The value to compare in the table
 	/// @returns {int}	The place in the highscore table or -1, if no highscore.
 	static get_highscore_rank = function(_value) {
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined || __is_better_than(_value, entry))
 				return i;
 		}
@@ -93,7 +85,7 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	/// @returns {HighScoreEntry} The entry generated or undefined, if this was not a highscore.
 	static register_highscore = function(_name, _score, _time, _id = undefined) {
 		var val;
-		switch (criteria) {
+		switch (data.criteria) {
 			case scoring.score_high:	
 			case scoring.score_low:
 				val = _score;
@@ -109,8 +101,8 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 			return undefined;
 		
 		var rv = new HighScoreEntry(_name, _score, _time, _id);
-		array_insert(entries, rank, rv);
-		array_resize(entries, max_entries);
+		array_insert(data.entries, rank, rv);
+		array_resize(data.entries, data.max_entries);
 		return rv;
 	}
 
@@ -121,11 +113,12 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	///					rank 1 returns the leader of the table!
 	///	@param {int=-1} from_rank. Leave at -1 to receive everything.
 	///	@param {int=-1} to_rank. Leave at -1 to receive everything.
+	///	@param {string="#"} prefix_character. The character to print as prefix to the rank number.
 	static get_rank_list = function(from_rank = -1, to_rank = -1, prefix_character = "#") {
-		if (to_rank < 0) to_rank = array_length(entries);
+		if (to_rank < 0) to_rank = array_length(data.entries);
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			if (i >= from_rank - 1 && i <= to_rank - 1)
@@ -142,14 +135,14 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	///	@param {int=-1} from_rank. Leave at -1 to receive everything.
 	///	@param {int=-1} to_rank. Leave at -1 to receive everything.
 	static get_name_list = function(from_rank = -1, to_rank = -1) {
-		if (to_rank < 0) to_rank = array_length(entries);
+		if (to_rank < 0) to_rank = array_length(data.entries);
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			if (i >= from_rank - 1 && i <= to_rank - 1)
-				rv += (rv == "" ? "" : "\n") + entry.Name;
+				rv += (rv == "" ? "" : "\n") + entry.data.Name;
 		}
 		return rv;
 	}
@@ -162,14 +155,14 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	///	@param {int=-1} from_rank. Leave at -1 to receive everything.
 	///	@param {int=-1} to_rank. Leave at -1 to receive everything.
 	static get_score_list = function(from_rank = -1, to_rank = -1) {
-		if (to_rank < 0) to_rank = array_length(entries);
+		if (to_rank < 0) to_rank = array_length(data.entries);
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			if (i >= from_rank - 1 && i <= to_rank - 1)
-				rv += (rv == "" ? "" : "\n") + string(entry.Score);
+				rv += (rv == "" ? "" : "\n") + string(entry.data.Score);
 		}
 		return rv;
 	}
@@ -182,21 +175,21 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	///	@param {int=-1} from_rank. Leave at -1 to receive everything.
 	///	@param {int=-1} to_rank. Leave at -1 to receive everything.
 	static get_time_list = function(from_rank = -1, to_rank = -1) {
-		if (to_rank < 0) to_rank = array_length(entries);
+		if (to_rank < 0) to_rank = array_length(data.entries);
 		// first, find out if we need the hours
 		var skip_hours = true;
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
-			if (entry.Time != undefined && entry.Time >= 3600000) { // 3600000 are the millis of one hour
+			if (entry.data.Time != undefined && entry.data.Time >= 3600000) { // 3600000 are the millis of one hour
 				skip_hours = false;
 				break;
 			}
 		}
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			if (i >= from_rank - 1 && i <= to_rank - 1)
@@ -214,14 +207,14 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 	///	@param {int=-1} to_rank. Leave at -1 to receive everything.
 	///	@param {bool=false} day_only. If true, only the date part of the creation of this entry is returned
 	static get_created_list = function(from_rank = -1, to_rank = -1, day_only = false) {
-		if (to_rank < 0) to_rank = array_length(entries);
+		if (to_rank < 0) to_rank = array_length(data.entries);
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			if (i >= from_rank - 1 && i <= to_rank - 1)
-				rv += (rv == "" ? "" : "\n") + (day_only ? date_date_string(entry.Created) : date_datetime_string(entry.Created));
+				rv += (rv == "" ? "" : "\n") + (day_only ? date_date_string(entry.data.Created) : date_datetime_string(entry.data.Created));
 		}
 		return rv;
 	}
@@ -232,29 +225,28 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 		var max_name_len = 0;
 		var max_score_len = -1;
 		var max_time_len = -1;
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
-			max_name_len = max(max_name_len, string_length(entry.Name));
-			if (entry.Score != undefined) max_score_len = max(max_score_len, string_length(string(entry.Score)));
-			if (entry.Time != undefined) max_time_len = max(max_time_len, string_length(entry.format_time()));
+			max_name_len = max(max_name_len, string_length(entry.data.Name));
+			if (entry.data.Score != undefined) max_score_len = max(max_score_len, string_length(string(entry.data.Score)));
+			if (entry.data.Time != undefined) max_time_len = max(max_time_len, string_length(entry.format_time()));
 		}
 		
 		var rv = "";
-		for (var i = 0; i < array_length(entries); i++) {
-			var entry = entries[@ i];
+		for (var i = 0; i < array_length(data.entries); i++) {
+			var entry = data.entries[@ i];
 			if (entry == undefined)
 				break;
 			var tm = max_time_len > 0 ? entry.format_time() : "";
 			rv += (rv == "" ? "" : "\n") +
-				entry.Name + string_repeat(" ", max_name_len + 2 - string_length(entry.Name)) +
-				(max_score_len > 0 ? string_repeat(" ", max_score_len + 2 - string_length(string(entry.Score))) + string(entry.Score) : "") +
+				entry.data.Name + string_repeat(" ", max_name_len + 2 - string_length(entry.data.Name)) +
+				(max_score_len > 0 ? string_repeat(" ", max_score_len + 2 - string_length(string(entry.data.Score))) + string(entry.data.Score) : "") +
 				(max_time_len > 0 ? string_repeat(" ", max_time_len + 2 - string_length(tm)) + tm : "") +
-				"  " + date_datetime_string(entry.Created);
+				"  " + date_datetime_string(entry.data.Created);
 		}
 		return rv;
 	}
 
 }
-

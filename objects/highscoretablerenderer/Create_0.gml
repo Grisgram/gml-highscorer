@@ -20,9 +20,9 @@ set_table = function(_highscoretable) {
 	var maxw_time	= 0;
 	var maxw_create = 0;
 	
-	var tmp = __table.entries[@ 0];
-	var render_score = (tmp != undefined && tmp.Score != undefined);
-	var render_time  = (tmp != undefined && tmp.Time != undefined);
+	var tmp = __table.data.entries[@ 0];
+	var render_score = (tmp != undefined && tmp.data.Score != undefined);
+	var render_time  = (tmp != undefined && tmp.data.Time != undefined);
 	
 	var surfw = 0, surfh = 0;
 	

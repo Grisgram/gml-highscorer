@@ -26,25 +26,27 @@
 
 function HighScoreEntry(_name, _score, _time, _id = undefined) constructor {
 	
-	ID		= _id;
-	Name	= _name;
-	Score	= _score;
-	Time	= _time;
+	data = {
+		ID		: _id,
+		Name	: _name,
+		Score	: _score,
+		Time	: _time,
+	}
 	
 	var tmptz = date_get_timezone();
 	date_set_timezone(timezone_utc);
-	Created = date_current_datetime();
+	data.Created = date_current_datetime();
 	date_set_timezone(tmptz);
 
 	/// @function		format_time(_time)
 	/// @description	Formats the time of the entry to a common format hh:mm:ss.iii
 	/// @param {bool=true} with_hours	Include "00:" a place for the hours in the string
 	static format_time = function(with_hours = true) {
-		if (Time == undefined) 
+		if (data.Time == undefined) 
 			return (with_hours ? "00:" : "") + "00:00.000";
 		
-		var ms = frac(Time / 1000) * 1000;
-		var secs = Time div 1000;
+		var ms = frac(data.Time / 1000) * 1000;
+		var secs = data.Time div 1000;
 		var mins = secs div 60;
 		secs -= 60 * mins;
 		var hrs = mins div 60;
