@@ -25,7 +25,7 @@ This graphic shows some information, what you can customize
 No problem, just head over to the [Releases]() and get the `.yymps` local package for easy import.
 
 ## Part of gml-raptor
-![image](https://user-images.githubusercontent.com/19487451/183870821-b88872c6-1fe2-4c9e-a862-ff780049b20a.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/19487451/177010769-5fd95602-8c3d-47ca-ab0b-7c4f964e05e2.png" style="display:block; margin:auto; width:219px"><br/>
 
 This library is also packaged into my [gml-raptor](https://github.com/Grisgram/gml-raptor) platform, where it is super-easy to save and restore your highscore lists by simply adding them to raptor's `GLOBALDATA` struct or attaching it to the `data` member of your _MainRoomController_, whatever you prefer.
 
