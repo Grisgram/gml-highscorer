@@ -1,6 +1,7 @@
 ## Welcome to the gml-highscorer repository!<br/>
 <p align="center"><img src="https://user-images.githubusercontent.com/19487451/183900462-3a74cc62-d2da-4109-836e-963748fd4993.png" style="display:block; margin:auto; width:172px"><br/>
   <i>Highscores &amp; Trophies for your GameMaker Game</i></p>
+<h1 align="center">1.1</h1>
 
 This repository contains the full source code of my highscore-library, including two ready-to-use renderers for HighscoreTables in your game.
 You can render a normal looking highscore or even a more sophisticated _TrophyTable_.
