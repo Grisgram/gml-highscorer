@@ -33,7 +33,7 @@ This library is also packaged into my [gml-raptor](https://github.com/Grisgram/g
 
 ### Personal note
 You may use this library for your own projects, even commercial. Crediting me makes me happy!<br/>
-As always, if you like what you see, please ✨ the repository and consider following me. The more reach these libraries get, the better they can evolve!
+As always, if you like what you see, please ⭐ the repository and consider following me. The more reach these libraries get, the better they can evolve!
 
 If you have an idea, how to improve this library, just open a pull request! I will gladly accept contributions as long as they fit the spirit of the library.
 
