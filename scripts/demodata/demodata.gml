@@ -43,7 +43,7 @@ global.score_low.register_highscore("Eighth",  30000);
 global.score_low.register_highscore("Ninth",   20000);
 global.score_low.register_highscore("Tenth",   10000);
 
-global.time_high.register_highscore("First",, 100000);
+global.time_high.register_highscore("First" ,, 100000);
 global.time_high.register_highscore("Second",, 90000);
 global.time_high.register_highscore("Third",,  80000);
 global.time_high.register_highscore("Fourth",, 70000);
