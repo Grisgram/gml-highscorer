@@ -31,10 +31,6 @@ function HighScoreTable(_max_entries = 10, _criteria = scoring.score_high) const
 		entries : array_create(_max_entries, undefined),
 	}
 	
-	/// @function		assign_data(loaded_data)
-	/// @description	(re)assign a loaded data structure.
-	///					Use this function if you saved the table to a file
-	///					and need to recreate the entry objects after loading.
 	static assign_data = function(loaded_data) {
 		data.max_entries = variable_struct_get(loaded_data, "max_entries");
 		data.criteria = loaded_data.criteria;
