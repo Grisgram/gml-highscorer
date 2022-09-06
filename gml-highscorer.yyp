@@ -7,6 +7,7 @@
     {"id":{"name":"spr1pxTrans","path":"sprites/spr1pxTrans/spr1pxTrans.yy",},"order":0,},
     {"id":{"name":"sprMedalSilver","path":"sprites/sprMedalSilver/sprMedalSilver.yy",},"order":2,},
     {"id":{"name":"Label","path":"objects/Label/Label.yy",},"order":6,},
+    {"id":{"name":"_GML_HIGHSCORER_VERSION_","path":"scripts/_GML_HIGHSCORER_VERSION_/_GML_HIGHSCORER_VERSION_.yy",},"order":4,},
     {"id":{"name":"fntRankDefault","path":"fonts/fntRankDefault/fntRankDefault.yy",},"order":2,},
     {"id":{"name":"sprMedalGold","path":"sprites/sprMedalGold/sprMedalGold.yy",},"order":1,},
     {"id":{"name":"sprMedalBronze","path":"sprites/sprMedalBronze/sprMedalBronze.yy",},"order":3,},
