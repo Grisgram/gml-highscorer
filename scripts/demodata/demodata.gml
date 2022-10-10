@@ -4,11 +4,11 @@
 
 global.selected_type = undefined;
 
-global.score_all	= new HighScoreTable(10, scoring.score_high);
-global.score_high	= new HighScoreTable(10, scoring.score_high);
-global.score_low	= new HighScoreTable(10, scoring.score_low);
-global.time_high	= new HighScoreTable(10, scoring.time_high);
-global.time_low		= new HighScoreTable(10, scoring.time_low);
+global.score_all	= new HighScoreTable("Highscores", 10, scoring.score_high);
+global.score_high	= new HighScoreTable("Highscores", 10, scoring.score_high);
+global.score_low	= new HighScoreTable("Highscores", 10, scoring.score_low);
+global.time_high	= new HighScoreTable("Highscores", 10, scoring.time_high);
+global.time_low		= new HighScoreTable("Highscores", 10, scoring.time_low);
 
 global.score_all.register_highscore("First",  100000, 100000);
 global.score_all.register_highscore("Second",  90000,  90000);
