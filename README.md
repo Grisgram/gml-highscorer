@@ -1,4 +1,4 @@
-## Welcome to the gml-highscorer repository!<br/>
+## Welcome to the gml-highscorer repository for GameMaker Studio 2.3+!<br/>
 <p align="center"><img src="https://user-images.githubusercontent.com/19487451/183900462-3a74cc62-d2da-4109-836e-963748fd4993.png" style="display:block; margin:auto; width:172px"><br/>
   <i>Highscores &amp; Trophies for your GameMaker Game</i></p>
 <h1 align="center">🔹🔷 VERSION 1️⃣.3️⃣.1️⃣ 🔷🔹</h1>
