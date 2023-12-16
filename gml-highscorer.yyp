@@ -22,7 +22,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.0.71",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"fntRank23","path":"fonts/fntRank23/fntRank23.yy",},},
@@ -47,6 +47,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"rmDemo","path":"rooms/rmDemo/rmDemo.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
