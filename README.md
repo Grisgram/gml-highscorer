@@ -42,7 +42,7 @@ Have fun with the highscorer!
 Yours,<br/>
 _Gris_
   
-(c)2022-2023 [coldrock.games](https://www.coldrock.games)
+(c)2022-2024 [coldrock.games](https://www.coldrock.games)
 
 ----
 
