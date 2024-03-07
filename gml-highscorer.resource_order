@@ -1,6 +1,6 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
     {"name":"fntRank23","order":1,"path":"fonts/fntRank23/fntRank23.yy",},
     {"name":"HighScoreEntry","order":1,"path":"scripts/HighScoreEntry/HighScoreEntry.yy",},
     {"name":"HighScoreTableRenderer","order":2,"path":"objects/HighScoreTableRenderer/HighScoreTableRenderer.yy",},

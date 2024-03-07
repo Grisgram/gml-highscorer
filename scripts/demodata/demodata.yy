@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "DemoData",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "HighScorerDemo",
-    "path": "folders/HighScorerDemo.yy",
+  "$GMScript":"",
+  "%Name":"DemoData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DemoData",
+  "parent":{
+    "name":"HighScorerDemo",
+    "path":"folders/HighScorerDemo.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

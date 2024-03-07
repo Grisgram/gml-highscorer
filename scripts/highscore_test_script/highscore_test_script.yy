@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "highscore_test_script",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "HighScorerDemo",
-    "path": "folders/HighScorerDemo.yy",
+  "$GMScript":"",
+  "%Name":"highscore_test_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"highscore_test_script",
+  "parent":{
+    "name":"HighScorerDemo",
+    "path":"folders/HighScorerDemo.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
