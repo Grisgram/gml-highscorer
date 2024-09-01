@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"highscore_test_script",
   "isCompatibility":false,
   "isDnD":false,
